@@ -26,12 +26,34 @@
 
 </head>
 <style>
-.mySlides {display:none}
+.mySlides {}
+
+.carousel-item {
+  height: 100vh;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+li:hover{
+	background-color: #52616b;
+	
+}
+
+.badge{
+	float: right;
+}
+
+
 </style>
 
 <script>
 	var slideIndex = 0;
-	//carousel();
+	carousel();
 
 function carousel() {
   var i;
@@ -45,371 +67,144 @@ function carousel() {
 		x[slideIndex-1].style.display = "block";
   setTimeout(carousel, 2000); // Change image every 2 seconds
 }
+
+
+
+function switchProject(id){
+	console.log(id);
+	for( var j=1; j <7; j++){
+		var elementName = "proj_" + j;
+		//console.log(elementName);
+		var allProjects = document.getElementsByClassName(elementName);
+		//console.log(allProjects);
+		if(allProjects.length != 0){
+			for (var i = 0; i < 2; i++) {
+				console.log(allProjects[i]);
+				allProjects[i].style.display = "none";
+			}
+		}
+	}
+	
+	var activeProject = document.getElementsByClassName(id);
+	for (i = 0; i < activeProject.length; i++) {
+		activeProject[i].style.display = "block";
+	}
+	
+	//activeProject.style.display = "block";
+	//id.style.display = "none";
+}
+
+
+
+
 </script>
 
 
 <body id="page-top">
-
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-    <a class="navbar-brand js-scroll-trigger" href="#page-top">
+  
+  <div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top" >
+    <!--<a class="navbar-brand js-scroll-trigger" href="#page-top">
       <span class="d-block d-lg-none">Anantha Natarajan</span>
       <span class="d-none d-lg-block">
         <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.jpg" alt="">
       </span>
-    </a>
+    </a>-->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#about">About</a>
+    <div class="collapse navbar-collapse " id="navbarSupportedContent" >
+      <ul class="navbar-nav justify-content-center" style = "margin:0 auto;width:320px;">
+         <li class="nav-item" style = "width:100px;height:50px; text-align:center; ">
+          <a class="nav-link js-scroll-trigger" style ="color: #c9d6df" href="index.html">Reel</a>
         </li>
-		<li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#projects">Projects</a>
+		<li class="nav-item" style = "width:100px; text-align:center">
+          <a class="nav-link js-scroll-trigger" style ="color: #c9d6df" href="Projects.html">Tech</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#experience">Experience</a>
+		<li class="nav-item" style = "width:100px; text-align:center">
+          <a class="nav-link js-scroll-trigger" style ="color: #c9d6df" href="Art.html">Art</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#education">Education</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
-        </li>
-		<li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#">Contact</a>
+        <li class="nav-item" style = "width:100px; text-align:center">
+          <a class="nav-link js-scroll-trigger"  style ="color: #c9d6df"href="Resume.html">Resume</a>
         </li>
       </ul>
     </div>
   </nav>
+  
+  </div>
+  <!--
+  <div style="width:10%;position:absolute; left:45vw; top: 90vh; z-index:2000">
+	<a class="btn btn-lg btn-primary btn-block text-uppercase js-scroll-trigger" href="#demoreel">Demo Reel</a>
+	</div>-->
 
-  <div class="container-fluid p-0">
+<div class="container-fluid p-0">
 
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
-      <div class="w-100">
-        <h1 class="mb-0">ANANTHA<span class="text-primary"> NATARAJAN</span>
-        </h1>
-		<h3 class="text-primary"></h3>
-		<p class="lead mb-5"><a class="btn btn-primary" href="Resume.pdf" target="_blank">Resume</a></p>
-		<div class="mb-2">
-I have a Bachelor's degree in Information Technology which gives me a comprehensive understanding of computer science and its applications.
-With experience working as a software engineer and visual designer, I know the importance of designing and developing for the end user.
-I'm currently pursuing a Master of Science degree in Computer Graphics at the Department of Visualization, Texas A&amp;M University.
- I'm extremely passionate about the impact of Engineering and Technology in the field of Gaming and Animation industry and I use my multidisciplinary skills and experience to architect tools and systems that helps the artists. <br>
- I'm looking for Internship and Full time opportunities in Gaming/Animation Industry.
-        </div>
-        <div class="mb-5">
-          <a href="mailto:ananthanatarajan@tamu.edu">ananthanatarajan@tamu.edu</a><br>
-		  <a class="fab fa-linkedin-in" href="https://www.linkedin.com/in/anantha-natarajan/" target="_blank">
-          </a>
-          <a href="https://github.com/anantha-natarajan" target="_blank">
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="https://www.behance.net/anantha_natarajan" target="_blank">
-            <i class="fab fa-behance"></i>
-          </a>
-        </div>
-    </section>
-
-    <hr class="m-0">
+ <!-- <div class="overlay" id="about">
+  <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+    <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4">
+  </video></div>-->
 	
+<section class="py-5" >
+	<!--<div class="container">
+		<h2 class="font-weight-light" style="text-align:center">DEMO REEL 2020</h2>
+	</div>-->
+	<div class="" style = "width:70%; margin: 0 auto;" id="demoreel">
+		<!--</br></br>-->
+		<div class="embed-responsive embed-responsive-16by9">
+		  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Y4HWYohuL4U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		  <!--<iframe class="embed-responsive-item" src="https://player.vimeo.com/video/432004068" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+		</div>
 		
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="projects">
+	</div>
+</section>
+
+
+<div class="" style = "width:80%; margin: 0 auto;" >
+<section class="p-3 p-lg-5 d-flex align-items-center" id="skills">
       <div class="w-100">
-        <h2 class="mb-5">ACADEMIC/ PERSONAL PROJECTS </h2>
-         <div class="container">
+        <h2 class="font-weight-light" style="text-align:center">Abilities</h2>
+<br>		<div class="" style = "width:100%; margin: 2% auto;" >
+			<div class="" id="wrapper">
+					<div class="bg-light border-right" id="sidebar-wrapper" style="width:33.3%; padding: 2% 4%;float:left; ">
+						<div>
+						  <h3>Languages</h3>
+						  <p class="list-group-item">C++ <span class="badge"> &nbsp;&nbsp;&nbsp; ( 4 years )</span></p>
+						  <p class="list-group-item">PYTHON <span class="badge"> &nbsp;&nbsp;&nbsp; ( 2 years )</span></p>
+						  <p class="list-group-item">OpenGL & WebGL <span class="badge"> &nbsp;&nbsp;&nbsp; ( 2 years )</span></p>
+						  <p class="list-group-item">C# <span class="badge"> &nbsp;&nbsp;&nbsp; ( 1 year )</span></p>
+						  <p class="list-group-item">HTML / CSS<span class="badge"> &nbsp;&nbsp;&nbsp; ( 5 years )</span></p>
+						  <p class="list-group-item">Javascript<span class="badge"> &nbsp;&nbsp;&nbsp; ( 4 years )</span></p>
+						  <p class="list-group-item">PHP <span class="badge"> &nbsp;&nbsp;&nbsp; ( 2 years )</span></p>
+						</div>
+					</div>
+					<div class="bg-light border-right" id="sidebar-wrapper" style="width:33.3%; padding: 2% 4%; float:left;">
+						<div>
+						  <h3>Tools</h3>
+						  <p class="list-group-item">Maya <span class="badge"> &nbsp;&nbsp;&nbsp; ( 2 years )</span></p>
+						  <p class="list-group-item">Houdini<span class="badge"> &nbsp;&nbsp;&nbsp; ( 1 year )</span></p>
+						  <p class="list-group-item">Unreal<span class="badge"> &nbsp;&nbsp;&nbsp; ( 1 year )</span></p>
+						  <p class="list-group-item">Unity <span class="badge"> &nbsp;&nbsp;&nbsp; ( 1 year )</span></p>
+						  <p class="list-group-item">Adobe Suite<span class="badge"> &nbsp;&nbsp;&nbsp; ( 4 years )</span></p>
+						  <p class="list-group-item">GIT<span class="badge"> &nbsp;&nbsp;&nbsp; ( 2 years )</span></p>
+						  <p class="list-group-item">Perforce Helixcore<span class="badge"> &nbsp;&nbsp;&nbsp; ( 1 year )</span></p>
+						</div>
+					</div>
+					<div class="bg-light border-right" id="sidebar-wrapper" style="width:33.3%; padding: 2% 4%; float:left;">
+						<div>
+						  <h3>Skills</h3>
+						  <p class="list-group-item">Procedural Tools<span class="badge"> &nbsp;&nbsp;&nbsp; ( 1 year )</span></p>
+						  <p class="list-group-item">Game Development <span class="badge"> &nbsp;&nbsp;&nbsp; ( 1.5 years )</span></p>
+						  <p class="list-group-item">Object Oriented Programming<span class="badge"> &nbsp;&nbsp;&nbsp; ( 4 years )</span></p>
+						  <p class="list-group-item">Data Structures<span class="badge"> &nbsp;&nbsp;&nbsp; ( 4 years )</span></p>
+						  <p class="list-group-item">Web Development<span class="badge"> &nbsp;&nbsp;&nbsp; ( 4 years )</span></p>
+						  <p class="list-group-item">Crowd Simulation<span class="badge"> &nbsp;&nbsp;&nbsp; ( 6 months )</span></p>
+						  <p class="list-group-item">Shader Programming<span class="badge"> &nbsp;&nbsp;&nbsp; ( 6 months )</span></p>
+						</div>
+					</div>
+			</div>
+		</div>
 
-      <!-- Project Three -->
-      <div class="row">
-        <div class="col-md-7">
-          <video class="img-fluid rounded mb-3 mb-md-0" poster="img/ProceduralPlacement_Thumbnail.JPG" controls>
-			  <source src="img/HDA.mp4" type="video/mp4">
-			  Your browser does not support HTML5 video.
-			</video>
-        </div>
-        <div class="col-md-5">
-          <h3>Art Directable Procedural Scatter Tool</h3>
-			<p>Developing a system that help artists create a grayboxed/detailed 3D environment from a simple 2D layout sketch</p>
-			<p>Artist will have complete control over the randomized asset placement and distribution. Several layers of  different environmental areas encompassing different assets can be layered over one another.</p>
-          <a class="btn btn-primary" href="TDD.pdf" target="_blank">Technical Design Document</a><br><br>
-		  <a class="btn btn-primary" href="ProceduralPlacementScatter.hda" target="_blank">Tool Download</a>
-		  <a class="btn btn-primary" href="https://www.youtube.com/watch?v=qJApodjSHKE" target="_blank">How it Works</a>
-        </div>
-      </div>
-      <!-- /.row -->
-	  <hr>
-      <!-- Project One -->
-      <div class="row">
-        <div class="col-md-7">
-			<video class="img-fluid rounded mb-3 mb-md-0" poster="img/BuildingGenerator.JPG" controls>
-			  <source src="img/BuildingGenerator.mp4" type="video/mp4">
-			  Your browser does not support HTML5 video.
-			</video>
-        </div>
-        <div class="col-md-5">
-          <h3>Procedural Building Generator Tool</h3>
-			<p>The tool takes a closed curve as an input</p>
-			<p>The buildings are composed of panels (walls, windows, doors) with options to adjust the floor height, building height and other panel properties</p>
-			<p>Toggle options are provided to generate building with/ without Roof and Door</p>
-			<p>Procedurally unwrap UV’s and this tool helped simplifying creation of a diverse city with unique buildings </p>
-			<a class="btn btn-primary" href="BuildingGenerator.hdanc" target="_blank">Tool Download</a>
-        </div>
-      </div>
-      <!-- /.row -->
-
-<hr>
-      <!-- Project One -->
-      <div class="row">
-        <div class="col-md-7">
-			<video class="img-fluid rounded mb-3 mb-md-0" poster="img/Harvest_Thumbnail.JPG" controls>
-			  <source src="img/harvest.mp4" type="video/mp4">
-			  Your browser does not support HTML5 video.
-			</video>
-        </div>
-        <div class="col-md-5">
-          <h3>HARVEST - Game Dev &amp Technical Artist</h3>
-			<p>Created a first-person open world farm exploration game guided by mentors from Epic Games, Amazon Games.</p>
-			<p>Developed a physics-based character-foliage interaction system that supports instancing different foliage models and ability to handle around 200K foliage.</p>
-			<p>Implemented core gameplay mechanics, AI enemy spawning, in-game UI, game save and re-spawn system using Unreal Engine and rigged foliage models in Maya</p>
-			<p>The Game was play tested with 20 teenagers and game was successfully released in itch.io with 77 downloads as of now </p>
-			<!--<p> <a href = "https://averagejo.itch.io/harvest"> PLAY GAME </a></p>-->
-          <a class="btn btn-primary" href="https://averagejo.itch.io/harvest" target = "_blank">Download Game</a>
-        </div>
-      </div>
-      <!-- /.row -->
-	  
-	  
-	  <hr>
-      <!-- Project One -->
-      <div class="row">
-        <div class="col-md-7">
-			<video class="img-fluid rounded mb-3 mb-md-0" poster="img/crowdSim.JPG" controls>
-			  <source src="img/crowdSim.mp4" type="video/mp4">
-			  Your browser does not support HTML5 video.
-			</video>
-        </div>
-        <div class="col-md-5">
-          <h3>Crowd Simulation - Animal Behavior</h3>
-			<p>Currently working on simulating the behavior of wolves and bison when they confront each other</p>
-			<p>Wolves and Bisons both exhibit the behavior of following the animal in front of them (foraging ant behavior)</p>
-			<p>Custom Solver has to be written in Houdini to simulate unique behavior shown by both crowds</p>
-			<p>The aim of this project is to simulate the changes in the crowds behavior due to external factors (predator, prey, etc)</p>
-        </div>
-      </div>
-      <!-- /.row -->
-
-      <hr>
-
-      <!-- Project Two -->
-      <div class="row">
-        <div class="col-md-7">
-			<video class="img-fluid rounded mb-3 mb-md-0" poster="img/VisualizingParticles_3.JPG" controls>
-			  <source src="img/ParticleGeneratorFinal.mp4" type="video/mp4">
-			  Your browser does not support HTML5 video.
-			</video>
-        </div>
-        <div class="col-md-5">
-          <h3>Particle Generator - Physics Based</h3>
-			<p>Architected a particle generator that generates tens of thousands of particles each deriving its attribute from a random distribution with an option to export the simulation as an .obj file.</p>
-			<p>Used Stack data structure to efficiently store/discard particles thereby reusing memory locations of dead particles.</p>
-			<p>Wrote a custom Python Surface Operator (SOP) in Houdini that reads the simulation from the obj file and visualize the simulation using Mantra Renderer</p>
-          <a class="btn btn-primary" href="https://github.com/anantha-natarajan/Particle-Simulation" target="_blank">Github</a>
-        </div>
-      </div>
-      <!-- /.row -->
-		
-	<hr>
-	<!-- Project Two -->
-      <div class="row">
-        <div class="col-md-7">
-			<video class="img-fluid rounded mb-3 mb-md-0" poster="img/VRSimulation.JPG" controls>
-			  <source src="img/VRSimulation.mp4" type="video/mp4">
-			  Your browser does not support HTML5 video.
-			</video>
-        </div>
-        <div class="col-md-5">
-          <h3>Flocking Simulation - Harry Potter VR</h3>
-			<!--<p>Implemented a VR simulation of Harry Potter Quidditch game using Unity Game Engine</p>-->
-			<p>The simulation has Two flock systems, each having its own team leader and different flock behaviours. The player will be the leader of one team and is able to switch through three different flock formations (members flock around team leader, members stay ahead of team leader, members stay behind team leader)   </p>
-			<p>The Wand which is on the right controller emits particles in burst mode and the particles gets destroyed after they die out.</p>
-			<p> The Flocking system, particle generator is custom based and does not use Unity AI/ Unity particle system.
-		  
-        </div>
-      </div>
-      <!-- /.row -->
-      <hr>
-
-		<div class="row">
-
-        <div class="col-md-7">
-            <img class="img-fluid rounded mb-3 mb-md-0" src="img/DigitalImage.jpg" alt="">
-        </div>
-        <div class="col-md-5">
-          <h3>Digital Image Processing</h3>
-		  <p>Implemented Image Manipulation Techniques like Affine Transformations, Blend Modes, Color Manipulation, Erosion & dilation filters, Dithering, Stitching & Carving, and Green Screen Removal</p>
-          <p>All the techniques were written from scratch to understand the algorithm behind every image manipulation operation performed by industry standard image processing tool like Photoshop</p>
-          <a class="btn btn-primary" href="https://github.com/anantha-natarajan/Digital-Image-Processing" target="_blank"> Github </a>
-        </div>
-      </div>
-	  
-	  <hr>
-	
-      <!-- Project Four -->
-      <div class="row">
-
-        <div class="col-md-7">
-          <video class="img-fluid rounded mb-3 mb-md-0"  controls>
-			  <source src="img/Vizard.mp4" type="video/mp4">
-			  Your browser does not support HTML5 video.
-			</video>
-        </div>
-        <div class="col-md-5">
-          <h3>The VIZard - 3D Animated Short</h3>
-		  <p>Created a 30 sec animated short called “The Vizard” as a part of course study</p>
-          <p>Worked in Storyboarding, Modelling, Texturing, Rigging, Animating,Compositing and creating Effects </p>
-          <a class="btn btn-primary" href="https://www.behance.net/gallery/76626513/The-VIZard" target="_blank"> Play </a>
-        </div>
-      </div>
-      <!-- /.row -->
-
-      <hr>
-
-      <!-- Pagination
-      <ul class="pagination justify-content-center">
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Previous">
-            <span aria-hidden="true">&laquo;</span>
-            <span class="sr-only">Previous</span>
-          </a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">1</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">2</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">3</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Next">
-            <span aria-hidden="true">&raquo;</span>
-            <span class="sr-only">Next</span>
-          </a>
-        </li>
-      </ul>
- -->
-      </div>
-    </section>
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Plugin JavaScript -->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-  <!-- Custom scripts for this template -->
-  <script src="js/resume.min.js"></script>
-
-</body>
-
-    <hr class="m-0">
-
-    <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="experience">
-      <div class="w-100">
-        <h2 class="mb-5">Experience</h2>
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">Visual Designer</h3>
-            <div class="subheading mb-3">Report Bee Pvt Ltd</div>
-            <p>Created vector graphics & illustration, User Interfaces and Interactions for web and mobile applications of the company's student management software. Designed several seasonal interactive animations and postcards that appeared on the company's landing page.
-</p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">June 2017 - June 2018</span>
-          </div>
-        </div>
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">Full Stack Developer</h3>
-            <div class="subheading mb-3">Jaze Networks Pvt Ltd</div>
-            <p>Worked on different modules of the SAAS product (an ISP Management Software Solution) such as Subscriber management, Plan management, Billing, Dashboard and Helpdesk.
-			Completely revamped the franchise module on the cloud version of the software to incorporate a new franchise business workflow.Worked with several payment and SMS gateway providers to integrate their solutions with the SAAS product.</p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">June 2016 - May 2017</span>
-          </div>
-        </div>
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">Software Developer Intern</h3>
-            <div class="subheading mb-3">Jaze Networks Pvt Ltd</div>
-            <p>Built a model that automated Accounting Operations in tally. CRON was used to schedule XML based SOAP requests to our Accounting server which would update Tally based on those requests.</p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">June 2015 - July 2015</span>
-          </div>
-        </div>
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between">
-          <div class="resume-content">
-            <h3 class="mb-0">Software Developer Intern</h3>
-            <div class="subheading mb-3">Scope e-Knowledge Center</div>
-            <p>Modelled a centralized defect-tracking platform that allows both developers and testers to effectively manage, evaluate and prioritize defects in software projects thus automating defect management process. Improved software development infrastructure of the organization by integrating defect tracker system with other project​ ​management​ ​tools.</p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">June 2014 - July 2014</span>
-          </div>
-        </div>
-
-      </div>
-
-    </section>
-
-    <hr class="m-0">
-
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="education">
-      <div class="w-100">
-        <h2 class="mb-5">Education</h2>
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">Texas A&amp M University</h3>
-            <div class="subheading mb-3">MS, Visualization (Computer Graphics)</div>
-            <p>Related Coursework: 3D Modelling & Animation, Digital Image Processing, Physically-Based Modeling & Animation, Design Communication, Life Drawing, Time-Based Media
-</p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">August 2018 - Decemer 2020</span>
-          </div>
-        </div>
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between">
-          <div class="resume-content">
-            <h3 class="mb-0">Sri Sivasubramanya Nadar College of Engineering</h3>
-            <div class="subheading mb-3">BTech, Information Technology </div>
-            <p>Related Coursework: Data Structures and Algorithms, Object Oriented Programming, Object Oriented Analysis and Design, Operating Systems, Database Management Systems
-</p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">August 2012 - May 2016</span>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <hr class="m-0">
-
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="skills">
-      <div class="w-100">
-        <h2 class="mb-5">Skills</h2>
-
+<!--
         <div class="subheading mb-3">Programming Languages</div>
         <ul class="list-inline dev-icons">
           <li class="list-inline-item">
@@ -443,7 +238,6 @@ I'm currently pursuing a Master of Science degree in Computer Graphics at the De
 		  <br>
 			
 		  </li>
-		  <!--<img class="fab" style= "" src="img/opengl.png" alt="">-->
         </ul>
 
         <div class="subheading mb-3">Software Tools</div>
@@ -463,20 +257,22 @@ I'm currently pursuing a Master of Science degree in Computer Graphics at the De
           <li>
             <i class="fa-li fa fa-check"></i>
             Unity</li>
-			
         </ul>
-      </div>
+      </div>-->
     </section>
-<!--
-    <hr class="m-0">
-	<section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="interests">
-      <div class="w-100">
-        <h2 class="mb-5">Interests</h2>
-        <p>Apart from being a web developer, I enjoy most of my time being outdoors. In the winter, I am an avid skier and novice ice climber. During the warmer months here in Colorado, I enjoy mountain biking, free climbing, and kayaking.</p>
-        <p class="mb-0">When forced indoors, I follow a number of sci-fi and fantasy genre movies and television shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest technology advancements in the front-end web development world.</p>
-      </div>
-    </section>
--->
+	</div>
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/resume.min.js"></script>
 
 
+
+</div>
+</body>
 </html>

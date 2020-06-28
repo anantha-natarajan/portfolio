@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Portfolio - Anantha Natarajan</title>
+
+  <!--Icons CSS -->
+  <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/resume.min.css" rel="stylesheet">
+
+</head>
+<style>
+.mySlides {}
+
+.carousel-item {
+  height: 65vh;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+li:hover{
+	background-color: #52616b;
+	
+}
+
+
+</style>
+
+<script>
+	var slideIndex = 0;
+	carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  //console.log(x[2]);
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > x.length) {slideIndex = 1}
+		x[slideIndex-1].style.display = "block";
+  setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+
+
+
+function switchProject(id){
+	console.log(id);
+	for( var j=1; j <7; j++){
+		var elementName = "proj_" + j;
+		//console.log(elementName);
+		var allProjects = document.getElementsByClassName(elementName);
+		//console.log(allProjects);
+		if(allProjects.length != 0){
+			for (var i = 0; i < 2; i++) {
+				console.log(allProjects[i]);
+				allProjects[i].style.display = "none";
+			}
+		}
+	}
+	
+	var activeProject = document.getElementsByClassName(id);
+	for (i = 0; i < activeProject.length; i++) {
+		activeProject[i].style.display = "block";
+	}
+	
+	//activeProject.style.display = "block";
+	//id.style.display = "none";
+}
+
+
+function switchArtProject(id){
+	console.log(id);
+	for( var j=1; j <7; j++){
+		var elementName = "aProj_" + j;
+		//console.log(elementName);
+		var allProjects = document.getElementsByClassName(elementName);
+		//console.log(allProjects);
+		if(allProjects.length != 0){
+			for (var i = 0; i < allProjects.length; i++) {
+				console.log(allProjects[i]);
+				allProjects[i].style.display = "none";
+			}
+		}
+	}
+	
+	var activeProject = document.getElementsByClassName(id);
+	for (i = 0; i < activeProject.length; i++) {
+		activeProject[i].style.display = "block";
+	}
+	
+	//activeProject.style.display = "block";
+	//id.style.display = "none";
+}
+
+
+
+
+</script>
+
+
+<body id="page-top">
+  
+  <div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top" >
+    <!--<a class="navbar-brand js-scroll-trigger" href="#page-top">
+      <span class="d-block d-lg-none">Anantha Natarajan</span>
+      <span class="d-none d-lg-block">
+        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.jpg" alt="">
+      </span>
+    </a>-->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse " id="navbarSupportedContent" >
+      <ul class="navbar-nav justify-content-center" style = "margin:0 auto;width:320px;">
+         <li class="nav-item" style = "width:100px;height:50px; text-align:center; ">
+          <a class="nav-link js-scroll-trigger" style ="color: #c9d6df" href="index.html">Reel</a>
+        </li>
+		<li class="nav-item" style = "width:100px; text-align:center">
+          <a class="nav-link js-scroll-trigger" style ="color: #c9d6df" href="Projects.html">Tech</a>
+        </li>
+		<li class="nav-item" style = "width:100px; text-align:center">
+          <a class="nav-link js-scroll-trigger" style ="color: #c9d6df" href="Art.html">Art</a>
+        </li>
+        <li class="nav-item" style = "width:100px; text-align:center">
+          <a class="nav-link js-scroll-trigger"  style ="color: #c9d6df"href="Resume.html">Resume</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  
+  </div>
+
+
+<div class="container-fluid p-0">
+
+ <!-- <div class="overlay" id="about">
+  <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+    <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4">
+  </video></div>-->
+	
+<section class="py-5" id="demoreel">
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/resume.min.js"></script>
+
+
+<div class="" style="width:80%; margin: 0 auto;">
+
+  <div class="row">
+	<div class="col-lg-3 mb-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <h4 class="card-title">
+            Charcoal - Figure Drawing
+          </h4>
+          <img class="img-fluid img-thumbnail" src="img/ArtProjects/TD3.jpg" alt="">
+        </div>
+      </div>
+    </div>
+	<div class="col-lg-3 mb-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <h4 class="card-title">
+             Lead Pencils - Figure Drawing
+          </h4>
+          <img class="img-fluid img-thumbnail" src="img/ArtProjects/TD1.jpg" alt="">
+        </div>
+      </div>
+    </div>
+	<div class="col-lg-3 mb-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <h4 class="card-title">
+             Charcoal Toned Paper 
+          </h4>
+          <img class="img-fluid img-thumbnail" src="img/ArtProjects/TD2.jpg" alt="">
+        </div>
+      </div>
+    </div>
+	<div class="col-lg-3 mb-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <h4 class="card-title">
+             Feet Study
+          </h4>
+          <img class="img-fluid img-thumbnail" src="img/ArtProjects/TD4.jpg" alt="">
+        </div>
+      </div>
+    </div>
+	
+    <div class="col-lg-3 mb-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <h4 class="card-title">
+			Poster Design </br>
+          </h4>
+          <img class="img-fluid img-thumbnail" src="img/ArtProjects/Flyer.jpg" alt="">
+		  <a href="https://www.behance.net/portfolio/editor?project_id=65998619" target="_blank">Detailed Project Info</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 mb-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <h4 class="card-title">
+			Wedding Invite
+          </h4>
+          <img class="img-fluid img-thumbnail" src="img/ArtProjects/Invite.png" alt="">
+		  <a href="https://www.behance.net/gallery/59355961/Wedding-Invite" target="_blank">Detailed Project Info</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 mb-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <h4 class="card-title">
+            Sticker Design
+          </h4>
+          <img class="img-fluid img-thumbnail" src="img/ArtProjects/Sticker.jpg" alt="">
+		  <a href="https://www.behance.net/gallery/63249267/Jetpack-Bee-Sticker-Design" target="_blank">Detailed Project Info</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 mb-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <h4 class="card-title">
+            Illustration
+          </h4>
+          <img class="img-fluid img-thumbnail" src="img/ArtProjects/MadMapper.png" alt="">
+        </div>
+      </div>
+    </div>
+	<div class="col-lg-4 mb-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <h4 class="card-title">
+            2D animation
+          </h4>
+          <img class="img-fluid img-thumbnail" src="img/ArtProjects/Christmas.gif" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 mb-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <h4 class="card-title">
+            Motion Graphics
+          </h4>
+          <img class="img-fluid img-thumbnail" src="img/ArtProjects/Panda.gif" alt="">
+		  <a href="https://www.behance.net/gallery/55125367/Noodle-Panda-Loader" target="_blank">Detailed Project Info</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 mb-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <h4 class="card-title">
+			Motion Graphics
+          </h4>
+          <img class="img-fluid img-thumbnail" src="img/ArtProjects/dribbble.gif" alt="">
+		  <a href="https://dribbble.com/shots/3649534-My-First-Dribbble-Shot" target="_blank">Detailed Project Info</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.row -->
+
+</div>
+
+
+<br><br>
+
+</section>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Portfolio - Anantha Natarajan</title>
+
+  <!--Icons CSS -->
+  <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/resume.min.css" rel="stylesheet">
+
+</head>
+<style>
+.mySlides {}
+
+.carousel-item {
+  height: 65vh;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+li:hover{
+	background-color: #52616b;
+	
+}
+
+.active{
+	background-color: #666;
+	color: white;
+}
+
+.mobile{
+    display: none;
+}
+.desktop{
+    display: inline-block;
+}
+@media only screen 
+    and (max-device-width :700px) 
+    and (orientation : portrait) 
+    and (-webkit-min-device-pixel-ratio : 2)
+{
+    .mobile{
+        display: inline-block;
+    }
+
+    .desktop{
+        display: none;
+    }
+}
+
+
+
+</style>
+
+<script>
+
+/* 
+DONE SAME RESPONSIVE FEATURE WITH MEDIA QUERY 
+
+var projectNames = [];
+
+function initiate(){
+	console.log("Load Called");
+	// Get all buttons with class="btn" inside the container
+	var btns = document.getElementsByClassName("list-btn");
+	// Loop through the buttons and add the active class to the current/clicked button
+	for (var i = 0; i < btns.length; i++) {
+		console.log(btns[i].innerHTML);
+		projectNames.push(btns[i].innerHTML);
+	}
+}
+
+function myFunction(w) {
+  if (w.matches) { // If media query matches
+	console.log("marco");
+	var btns = document.getElementsByClassName("list-btn");
+	for (var i = 0; i < btns.length; i++) {
+		btns[i].innerHTML = i.toString();
+	}
+  } else {
+  console.log("polo");
+	var btns = document.getElementsByClassName("list-btn");
+	for (var i = 0; i < btns.length; i++) {
+		btns[i].innerHTML = projectNames[i];
+	}
+  }
+}
+
+var win = window.matchMedia("(max-width: 700px)")
+myFunction(win) // Call listener function at run time
+win.addListener(myFunction) // Attach listener function on state changes
+
+*/
+
+function switchProject(id, e){
+	console.log(e);
+	for( var j=1; j <7; j++){
+		var elementName = "proj_" + j;
+		//console.log(elementName);
+		var allProjects = document.getElementsByClassName(elementName);
+		//console.log(allProjects);
+		if(allProjects.length != 0){
+			for (var i = 0; i < 2; i++) {
+				//console.log(allProjects[i]);
+				allProjects[i].style.display = "none";
+			}
+		}
+	}
+	
+	var activeProject = document.getElementsByClassName(id);
+	for (i = 0; i < activeProject.length; i++) {
+		activeProject[i].style.display = "block";
+	}
+	
+	//activeProject.style.display = "block";
+	//id.style.display = "none";
+	
+	// Get the container element
+	var btnContainer = document.getElementById("sidebar");
+	// Get all buttons with class="btn" inside the container
+	var btns = btnContainer.getElementsByClassName("list-btn");
+	var activeBtns;
+	var win = window.matchMedia("(max-width: 700px)")
+	if(win.matches){
+		activeBtns = btnContainer.getElementsByClassName("mobile active");
+	}else{
+		activeBtns = btnContainer.getElementsByClassName("desktop active");
+	}
+	// Loop through the buttons and add the active class to the current/clicked button
+	for (var i = 0; i < activeBtns.length; i++) {
+		activeBtns[i].className = activeBtns[i].className.replace(" active", "");
+	}
+	e.className += " active";
+	
+}
+
+</script>
+
+
+<body id="page-top" onload="initiate()">
+  
+  <div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top" >
+    <!--<a class="navbar-brand js-scroll-trigger" href="#page-top">
+      <span class="d-block d-lg-none">Anantha Natarajan</span>
+      <span class="d-none d-lg-block">
+        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.jpg" alt="">
+      </span>
+    </a>-->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse " id="navbarSupportedContent" >
+      <ul class="navbar-nav justify-content-center" style = "margin:0 auto;width:320px;">
+         <li class="nav-item" style = "width:100px;height:50px; text-align:center; ">
+          <a class="nav-link js-scroll-trigger" style ="color: #c9d6df" href="index.html">Reel</a>
+        </li>
+		<li class="nav-item" style = "width:100px; text-align:center">
+          <a class="nav-link js-scroll-trigger" style ="color: #c9d6df" href="Projects.html">Tech</a>
+        </li>
+		<li class="nav-item" style = "width:100px; text-align:center">
+          <a class="nav-link js-scroll-trigger" style ="color: #c9d6df" href="Art.html">Art</a>
+        </li>
+        <li class="nav-item" style = "width:100px; text-align:center">
+          <a class="nav-link js-scroll-trigger"  style ="color: #c9d6df"href="Resume.html">Resume</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  
+  </div>
+
+
+<div class="container-fluid p-0">
+
+ <!-- <div class="overlay" id="about">
+  <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+    <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4">
+  </video></div>-->
+	
+<section class="py-5" id="demoreel">
+		
+		
+<div class="" style = "width:90%; margin: 0 auto;" >
+<div class="container">
+		<h2 class="font-weight-light" style="text-align:center">Technical Projects</h2>
+	</div></br></br>
+<div class="d-flex" >
+	<div class="bg-light border" id="sidebar" style="width:20%;float:left">
+      <div class="list-group list-group-flush">
+        <a href="#page-top" class="list-group-item list-group-item-action desktop list-btn active" onclick = "switchProject('proj_2', this)">Building Generator</a>
+		<a href="#page-top" class="list-group-item list-group-item-action desktop list-btn" onclick = "switchProject('proj_4', this)">Quidditch VR Simulator</a>
+		<a href="#page-top" class="list-group-item list-group-item-action desktop list-btn" onclick = "switchProject('proj_5', this)">Harvest - First Person Game</a>
+        <a href="#page-top" class="list-group-item list-group-item-action desktop list-btn" onclick = "switchProject('proj_3', this)">Custom Particle Generator</a>
+        <a href="#page-top" class="list-group-item list-group-item-action desktop list-btn" onclick = "switchProject('proj_6', this)">VIZard - 3D Animated Short</a>
+		<a href="#page-top" class="list-group-item list-group-item-action desktop list-btn" onclick = "switchProject('proj_1', this)">Scatter Placement Tool</a>
+		<a href="#page-top" class="list-group-item list-group-item-action mobile list-btn active" onclick = "switchProject('proj_2', this)">Pr1</a>
+		<a href="#page-top" class="list-group-item list-group-item-action mobile list-btn" onclick = "switchProject('proj_4', this)">Pr2</a>
+		<a href="#page-top" class="list-group-item list-group-item-action mobile list-btn" onclick = "switchProject('proj_5', this)">Pr3</a>
+        <a href="#page-top" class="list-group-item list-group-item-action mobile list-btn" onclick = "switchProject('proj_3', this)">Pr4</a>
+        <a href="#page-top" class="list-group-item list-group-item-action mobile list-btn" onclick = "switchProject('proj_6', this)">Pr5</a>
+		<a href="#page-top" class="list-group-item list-group-item-action mobile list-btn" onclick = "switchProject('proj_1', this)">Pr6</a>
+      </div>
+    </div>
+	
+	
+	<div id="page-content-wrapper" style ="padding-left:20px;width:80%;float:left">
+
+	<!-- Portfolio Item Heading -->
+  <!--<h3 class="my-3">Art Directable Procedural Scatter Tool</h3>-->
+
+  <!-- Portfolio Item Row -->
+  <div class="row" >
+    <div class="col-md-8 proj_1" style="display:none;">
+		<div class="embed-responsive embed-responsive-16by9">
+		  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/T32RAWd8sa4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
+    </div>
+
+    <div class="col-md-4 proj_1" style="display:none">
+      <h3>Art Directable Procedural Scatter Tool</h3>
+			<p>Developing a system that help artists create a grayboxed/detailed 3D environment from a simple 2D layout sketch</p>
+			<p>Artist will have complete control over the randomized asset placement and distribution. Several layers of  different environmental areas encompassing different assets can be layered over one another.</p>
+          <a class="btn btn-primary" href="TDD.pdf" target="_blank">Technical Design Document</a><br><br>
+		  <a class="btn btn-primary" href="ProceduralPlacementScatter.hda" target="_blank">Tool Download</a>
+		  <a class="btn btn-primary" href="https://www.youtube.com/watch?v=qJApodjSHKE" target="_blank">How it Works</a><br><br>
+		  <a class="btn btn-primary" href="https://docs.google.com/presentation/d/18LlnoetUOEebLqh6f3GhxNNHq2oL8ixDnQkVHzP9Llk/edit?usp=sharing" target = "_blank">Process Breakdown</a>
+    </div>
+  </div>
+  
+  <div class="row" >
+    <div class="col-md-8 proj_2" style="display:block">
+
+		<div class="embed-responsive embed-responsive-16by9">
+		  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/gt872OXf07U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
+		
+    </div>
+
+    <div class="col-md-4 proj_2" style="display:block">
+      <h3>Procedural Building Generator Tool</h3>
+			<p>The tool takes a closed curve as an input</p>
+			<p>The buildings are composed of panels (walls, windows, doors) with options to adjust the floor height, building height and other panel properties</p>
+			<p>Toggle options are provided to generate building with/ without Roof and Door</p>
+			<p>Procedurally unwrap UV’s and this tool helped simplifying creation of a diverse city with unique buildings </p>
+			<a class="btn btn-primary" href="BuildingGenerator.hdanc" target="_blank">Tool Download</a>
+    </div>
+  </div>
+  
+  <div class="row" >
+    <div class="col-md-8 proj_3" style="display:none">
+			<div class="embed-responsive embed-responsive-16by9">
+			<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/z9H5yLSqiLg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+			
+    </div>
+
+    <div class="col-md-4 proj_3" style="display:none">
+      <h3>Particle Generator - Physics Based</h3>
+			<p>Architected a particle generator that generates tens of thousands of particles each deriving its attribute from a random distribution with an option to export the simulation as an .obj file.</p>
+			<p>Used Stack data structure to efficiently store/discard particles thereby reusing memory locations of dead particles.</p>
+			<p>Wrote a custom Python Surface Operator (SOP) in Houdini that reads the simulation from the obj file and visualize the simulation using Mantra Renderer</p>
+          <a class="btn btn-primary" href="https://github.com/anantha-natarajan/Particle-Simulation" target="_blank">Github</a>
+    </div>
+  </div>
+  
+  <div class="row" >
+    <div class="col-md-8 proj_4" style="display:none">
+			<div class="embed-responsive embed-responsive-16by9">
+			<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/PycDvzpeOSo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+    </div>
+
+    <div class="col-md-4 proj_4" style="display:none">
+      <h3>Flocking Simulation - Harry Potter VR</h3>
+			<!--<p>Implemented a VR simulation of Harry Potter Quidditch game using Unity Game Engine</p>-->
+			<p>The simulation has Two flock systems, each having its own team leader and different flock behaviours. The player will be the leader of one team and is able to switch through three different flock formations (members flock around team leader, members stay ahead of team leader, members stay behind team leader)   </p>
+			<p>The Wand which is on the right controller emits particles in burst mode and the particles gets destroyed after they die out.</p>
+			<p> The Flocking system, particle generator is custom based and does not use Unity AI/ Unity particle system.
+    </div>
+  </div>
+  
+    <div class="row" >
+    <div class="col-md-8 proj_5" style="display:none">
+			<div class="embed-responsive embed-responsive-16by9">
+			<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/xiej9DsS19U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+    </div>
+
+    <div class="col-md-4 proj_5" style="display:none">
+      <h3>HARVEST - Game Dev &amp Technical Artist</h3>
+			<p>Created a first-person open world farm exploration game guided by mentors from Epic Games, Amazon Games.</p>
+			<p>Developed a physics-based character-foliage interaction system that supports instancing different foliage models and ability to handle around 200K foliage.</p>
+			<p>Implemented core gameplay mechanics, AI enemy spawning, in-game UI, game save and re-spawn system using Unreal Engine and rigged foliage models in Maya</p>
+			<p>The Game was play tested with 20 teenagers and game was successfully released in itch.io with 77 downloads as of now </p>
+			<!--<p> <a href = "https://averagejo.itch.io/harvest"> PLAY GAME </a></p>-->
+          <a class="btn btn-primary" href="https://averagejo.itch.io/harvest" target = "_blank">Download Game</a><br><br>
+		  <a class="btn btn-primary" href="https://docs.google.com/presentation/d/1qtixRTe7TiFQ0F44QGmYPSJc4zZ8PLkWJmXQJW2U3g4/edit?usp=sharing" target = "_blank">Character-Foliage System Breakdown</a>
+    </div>
+  </div>
+  
+  <div class="row" >
+    <div class="col-md-8 proj_6" style="display:none">
+			<div class="embed-responsive embed-responsive-16by9">
+			<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/mF10HImvb_k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+    </div>
+
+    <div class="col-md-4 proj_6" style="display:none">
+      <h3>The VIZard - 3D Animated Short</h3>
+		  <p>Created a 30 sec animated short called “The Vizard” as a part of course study</p>
+          <p>Worked in Storyboarding, Modelling, Texturing, Rigging, Animating,Compositing and creating Effects </p>
+          <a class="btn btn-primary" href="https://www.behance.net/gallery/76626513/The-VIZard" target="_blank"> Play </a>
+    </div>
+  </div>
+  
+  <div class="row" >
+    <div class="col-md-8 proj_7" style="display:none">
+       <img class="img-fluid rounded mb-3 mb-md-0" src="img/DigitalImage.jpg" alt="">
+    </div>
+
+    <div class="col-md-4 proj_7" style="display:none">
+      <h3>Digital Image Processing</h3>
+		  <p>Implemented Image Manipulation Techniques like Affine Transformations, Blend Modes, Color Manipulation, Erosion & dilation filters, Dithering, Stitching & Carving, and Green Screen Removal</p>
+          <p>All the techniques were written from scratch to understand the algorithm behind every image manipulation operation performed by industry standard image processing tool like Photoshop</p>
+          <a class="btn btn-primary" href="https://github.com/anantha-natarajan/Digital-Image-Processing" target="_blank"> Github </a>
+    </div>
+  </div>
+  
+  <div class="row" >
+    <div class="col-md-8 proj_8" style="display:none">
+       <video class="img-fluid rounded mb-3 mb-md-0" poster="img/crowdSim.JPG" controls>
+			  <source src="img/crowdSim.mp4" type="video/mp4">
+			  Your browser does not support HTML5 video.
+			</video>
+    </div>
+
+    <div class="col-md-4 proj_8" style="display:none">
+      <h3>Crowd Simulation - Animal Behavior</h3>
+			<p>Currently working on simulating the behavior of wolves and bison when they confront each other</p>
+			<p>Wolves and Bisons both exhibit the behavior of following the animal in front of them (foraging ant behavior)</p>
+			<p>Custom Solver has to be written in Houdini to simulate unique behavior shown by both crowds</p>
+			<p>The aim of this project is to simulate the changes in the crowds behavior due to external factors (predator, prey, etc)</p>
+    </div>
+  </div>
+  
+  
+  
+  
+</div>
+
+</div>
+	
+</div>
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/resume.min.js"></script>
+
+
+
+</div>
+<br><br>
+
+</section>
+
+</div>
+
+</body>
+</html>
